@@ -10,8 +10,8 @@ export default function Dashboard() {
     const ideasRes = await fetch("/api/ideas")
     const ideasData = await ideasRes.json()
 
-    const paymentsRes = await fetch("/api/payments").catch(() => null)
-    const paymentsData = paymentsRes ? await paymentsRes.json() : []
+    const paymentsRes = await fetch("/api/payments")
+    const paymentsData = await paymentsRes.json()
 
     setIdeas(ideasData)
     setPayments(paymentsData)

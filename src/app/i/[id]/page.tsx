@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
 
 export default function IdeaPage() {
@@ -13,6 +13,9 @@ export default function IdeaPage() {
   useEffect(() => {
     fetch("/api/track", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ ideaId: id, type: "click" })
     })
   }, [id])
@@ -20,11 +23,17 @@ export default function IdeaPage() {
   async function submitLead() {
     await fetch("/api/lead", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ ideaId: id, email })
     })
 
     await fetch("/api/track", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ ideaId: id, type: "lead" })
     })
 
@@ -34,6 +43,9 @@ export default function IdeaPage() {
   async function simulatePayment() {
     await fetch("/api/payment", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ ideaId: id, amount: 25 })
     })
 
