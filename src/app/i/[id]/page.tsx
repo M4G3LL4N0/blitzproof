@@ -17,7 +17,7 @@ export default function IdeaPage() {
     })
   }, [id])
 
-  async function submit() {
+  async function submitLead() {
     await fetch("/api/lead", {
       method: "POST",
       body: JSON.stringify({ ideaId: id, email })
@@ -31,17 +31,24 @@ export default function IdeaPage() {
     setSubmitted(true)
   }
 
+  async function simulatePayment() {
+    await fetch("/api/payment", {
+      method: "POST",
+      body: JSON.stringify({ ideaId: id, amount: 25 })
+    })
+
+    alert("Payment recorded")
+  }
+
   return (
     <main className="min-h-screen bg-black text-white flex items-center justify-center p-10">
       <div className="max-w-xl w-full">
-        <h1 className="text-4xl mb-4">Startup Test Page</h1>
+        <h1 className="text-4xl mb-4">Startup Offer</h1>
         <p className="text-white/60 mb-6">
-          Join early access.
+          Early access + exclusive offer.
         </p>
 
-        {submitted ? (
-          <p className="text-green-400">You're in.</p>
-        ) : (
+        {!submitted ? (
           <>
             <input
               className="w-full p-3 mb-4 bg-white text-black"
@@ -50,12 +57,19 @@ export default function IdeaPage() {
               onChange={(e) => setEmail(e.target.value)}
             />
             <button
-              onClick={submit}
-              className="w-full p-3 bg-white text-black"
+              onClick={submitLead}
+              className="w-full p-3 bg-white text-black mb-4"
             >
-              Join
+              Join Waitlist
             </button>
           </>
+        ) : (
+          <button
+            onClick={simulatePayment}
+            className="w-full p-3 bg-green-500 text-black"
+          >
+            Buy Now ($25)
+          </button>
         )}
       </div>
     </main>
