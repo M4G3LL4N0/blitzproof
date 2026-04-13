@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import fs from "fs"
 import path from "path"
-import { scoreIdea, decide } from "@/lib/engine"
+import { scoreIdea, decide } from "../../../lib/engine"
 
 const filePath = path.join(process.cwd(), "data", "ideas.json")
 
