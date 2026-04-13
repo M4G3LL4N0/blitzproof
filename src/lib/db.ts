@@ -4,8 +4,12 @@ import path from "path"
 const leadsPath = path.join(process.cwd(), "data", "leads.json")
 
 export function getLeads() {
-  const raw = fs.readFileSync(leadsPath, "utf-8")
-  return JSON.parse(raw)
+  try {
+    const raw = fs.readFileSync(leadsPath, "utf-8")
+    return JSON.parse(raw)
+  } catch {
+    return []
+  }
 }
 
 export function addLead(lead: any) {

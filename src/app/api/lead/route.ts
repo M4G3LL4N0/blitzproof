@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { addLead } from "@/lib/db"
+import { addLead } from "../../../lib/db"
 
 export async function POST(req: Request) {
   const body = await req.json()
