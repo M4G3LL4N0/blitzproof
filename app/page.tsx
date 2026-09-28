@@ -1,3 +1,4 @@
+import { ProofCheck } from "../components/ProofCheck"
 import GradientBG from "../components/ui/gradient-bg"
 import Fade from "../components/ui/fade"
 import Glass from "../components/ui/glass"
@@ -14,7 +15,7 @@ const proofGates = [
 const features = [
   {
     title: "Idea scoring",
-    text: "The ladder on this page is the published model. A local scoring file exists in the working tree and is not in the published repository."
+    text: "Enter clicks, leads, and revenue in the sample check. The published scoring functions return a score and a stage. Those numbers are not customer results."
   },
   {
     title: "Validation funnels",
@@ -66,10 +67,10 @@ export default function Home() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
-              href="#proof-ladder"
+              href="#proof-check"
               className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#ff9a4d,#ff6f91,#9b7bff)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_15px_50px_rgba(255,120,120,0.35)] transition hover:scale-[1.01]"
             >
-              Read the proof ladder
+              Run a sample check
             </a>
           </div>
           </div>
@@ -145,6 +146,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ProofCheck />
+
       <section className="relative mx-auto max-w-7xl px-6 pb-28 md:px-10">
         <Glass className="p-6 md:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
@@ -161,8 +164,8 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <a href="#proof-ladder" className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-black">
-                Stay on the ladder
+              <a href="#proof-check" className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-black">
+                Run a sample check
               </a>
               <p className="max-w-xs text-xs leading-5 text-white/45">
                 Dashboard and funnel routes are not in the published repository.
