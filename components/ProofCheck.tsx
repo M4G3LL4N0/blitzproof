@@ -23,10 +23,10 @@ export function ProofCheck() {
   return (
     <section id="proof-check" className="relative mx-auto max-w-7xl px-6 pb-12 md:px-10">
       <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-6">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-white/45">Sample check · not customer results</p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">Run the five-gate score on sample numbers.</h2>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-white/45">Interactive demo</p>
+        <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">Score the bet in front of you.</h2>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-white/60">
-          Clicks, leads, and recorded revenue are inputs you type here. The score and stage come from the published scoring functions. They are not a live ledger.
+          Enter clicks, leads, and revenue. BlitzProof returns a score and a stage from the five proof gates.
         </p>
         <form className="mt-6 grid gap-4 sm:grid-cols-3">
           {[

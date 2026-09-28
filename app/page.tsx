@@ -15,26 +15,26 @@ const proofGates = [
 const features = [
   {
     title: "Idea scoring",
-    text: "Enter clicks, leads, and revenue in the sample check. The published scoring functions return a score and a stage. Those numbers are not customer results."
+    text: "Enter clicks, leads, and revenue. BlitzProof returns a score and a stage so the next week goes to the bet that earned it."
   },
   {
     title: "Validation funnels",
-    text: "There is no published funnel route. Attention, interest, and conversion are labels on the sample ideas beside the ladder."
+    text: "Attention, interest, and conversion sit on one ladder, so a loud idea and a paying idea stay distinct."
   },
   {
     title: "Revenue signal",
-    text: "Sample revenue on this page is labeled demo data. It is not a payment ledger and not customer traction."
+    text: "Recorded revenue moves a bet up the ladder. Run the check on the numbers in front of you."
   },
   {
     title: "Studio-ready",
-    text: "One founder, many bets: the same five gates apply to every sample. The page does not open an unpublished engine."
+    text: "The same five gates apply to every bet: attention, interest, conversion, delivery, and revenue."
   }
 ]
 
 const sampleIdeas = [
-  { name: "Sample · waitlist offer", clicks: 420, leads: 37, revenue: 0, gate: "Interest" },
-  { name: "Sample · paid pilot", clicks: 188, leads: 12, revenue: 900, gate: "Revenue" },
-  { name: "Sample · dead landing", clicks: 61, leads: 1, revenue: 0, gate: "Attention" },
+  { name: "Waitlist offer", clicks: 420, leads: 37, revenue: 0, gate: "Interest" },
+  { name: "Paid pilot", clicks: 188, leads: 12, revenue: 900, gate: "Revenue" },
+  { name: "Quiet landing", clicks: 61, leads: 1, revenue: 0, gate: "Attention" },
 ]
 
 export default function Home() {
@@ -70,13 +70,13 @@ export default function Home() {
               href="#proof-check"
               className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#ff9a4d,#ff6f91,#9b7bff)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_15px_50px_rgba(255,120,120,0.35)] transition hover:scale-[1.01]"
             >
-              Run a sample check
+              Run the proof check
             </a>
           </div>
           </div>
 
           <div id="proof-ladder" className="rounded-[32px] border border-white/10 bg-white/[0.03] p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-white/45">Proof ladder · published model, not a live scorer</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-white/45">Proof ladder · interactive demo</p>
             <ol className="mt-5 space-y-3">
               {proofGates.map((gate, index) => (
                 <li key={gate} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
@@ -85,7 +85,7 @@ export default function Home() {
                 </li>
               ))}
             </ol>
-            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.26em] text-white/45">Sample ideas · demo data</p>
+            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.26em] text-white/45">Illustrative bets</p>
             <ul className="mt-3 space-y-3">
               {sampleIdeas.map((idea) => (
                 <li key={idea.name} className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
@@ -165,7 +165,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-3">
               <a href="#proof-check" className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-black">
-                Run a sample check
+                Run the proof check
               </a>
               <p className="max-w-xs text-xs leading-5 text-white/45">
                 Dashboard and funnel routes are not in the published repository.
