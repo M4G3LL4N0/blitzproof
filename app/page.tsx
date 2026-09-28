@@ -1,4 +1,3 @@
-import Link from "next/link"
 import GradientBG from "../components/ui/gradient-bg"
 import Fade from "../components/ui/fade"
 import Glass from "../components/ui/glass"
@@ -15,19 +14,19 @@ const proofGates = [
 const features = [
   {
     title: "Idea scoring",
-    text: "The /dashboard engine ranks local demo ideas by clicks, leads, and recorded payment events — not founder excitement."
+    text: "The ladder on this page is the published model. A local scoring file exists in the working tree and is not in the published repository."
   },
   {
     title: "Validation funnels",
-    text: "Open /i/1 to send traffic at a single offer page and see whether attention becomes a lead."
+    text: "There is no published funnel route. Attention, interest, and conversion are labels on the sample ideas beside the ladder."
   },
   {
     title: "Revenue signal",
-    text: "Payment records attach to an idea id so kill / iterate / scale is a money question, not a vibe."
+    text: "Sample revenue on this page is labeled demo data. It is not a payment ledger and not customer traction."
   },
   {
     title: "Studio-ready",
-    text: "One founder, many bets: the proof ladder is the same for every idea in the local engine."
+    text: "One founder, many bets: the same five gates apply to every sample. The page does not open an unpublished engine."
   }
 ]
 
@@ -66,23 +65,17 @@ export default function Home() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/dashboard"
+            <a
+              href="#proof-ladder"
               className="inline-flex items-center justify-center rounded-full bg-[linear-gradient(90deg,#ff9a4d,#ff6f91,#9b7bff)] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_15px_50px_rgba(255,120,120,0.35)] transition hover:scale-[1.01]"
             >
-              Open Engine
-            </Link>
-            <Link
-              href="/i/1"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white/85 transition hover:bg-white/[0.07]"
-            >
-              View Funnel
-            </Link>
+              Read the proof ladder
+            </a>
           </div>
           </div>
 
-          <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-white/45">Proof ladder</p>
+          <div id="proof-ladder" className="rounded-[32px] border border-white/10 bg-white/[0.03] p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-white/45">Proof ladder · published model, not a live scorer</p>
             <ol className="mt-5 space-y-3">
               {proofGates.map((gate, index) => (
                 <li key={gate} className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
@@ -168,12 +161,12 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col gap-3">
-              <Link href="/dashboard" className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-black">
-                Launch dashboard
-              </Link>
-              <Link href="/i/1" className="rounded-full border border-white/15 bg-white/[0.04] px-6 py-3 text-center text-sm font-semibold text-white/85">
-                Test funnel
-              </Link>
+              <a href="#proof-ladder" className="rounded-full bg-white px-6 py-3 text-center text-sm font-semibold text-black">
+                Stay on the ladder
+              </a>
+              <p className="max-w-xs text-xs leading-5 text-white/45">
+                Dashboard and funnel routes are not in the published repository.
+              </p>
             </div>
           </div>
         </Glass>
